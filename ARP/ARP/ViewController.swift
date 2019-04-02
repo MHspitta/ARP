@@ -9,22 +9,51 @@
 import UIKit
 import SceneKit
 import ARKit
-
+import Firebase
+import FirebaseDatabase
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
+    // Variables
     var myDataCardLabel: SKLabelNode!
     var spriteKitScene = SKScene(fileNamed: "DataCard")
     var spriteKitMain: SKScene!
+    var dataText: String = "I love bananas"
     
+    var ref: DatabaseReference!
+    var refHandle: DatabaseHandle!
+    let uid = Auth.auth().currentUser?.uid
+    var plantID: String = ""
+    var check_1: Int = 0
+    var check_2: Int = 0
+    
+    var plantX: Plant!
+    var phArray: [PH] = []
     
     @IBOutlet var sceneView: ARSCNView!
     @IBAction func selectOptions(_ sender: UIButton) {
         handleMore()
+        
+        if check_1 == 1 {
+            fetchDefault()
+        }
+    }
+    
+    // Upload dummy variables button
+    @IBAction func inputData(_ sender: UIButton) {
+        
+        if check_1 == 0 {
+            uploadData()
+        } else {
+            updateData()
+        }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
+        
         // Set the view's delegate
         sceneView.delegate = self
         
@@ -106,14 +135,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             
             planeNode.eulerAngles.x = -Float.pi / 2
             
-            let textNode = SKLabelNode(text: "I Love Bananas")
+            let textNode = SKLabelNode(text: dataText)
             textNode.fontName = "AvenirNext-Bold"
-//            textNode.horizontalAlignmentMode = .left
-            textNode.position = CGPoint(x: -30 , y: -100)
+            textNode.horizontalAlignmentMode = .right
+            textNode.fontSize = 15
+            textNode.position = CGPoint(x: 8, y: 0)
         
             spriteKitScene!.addChild(textNode)
             node.addChildNode(planeNode)
-            
         }
     }
     
@@ -131,14 +160,82 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
     
     
-//    func testDataCard() {
-//        print("1")
-//        if let myDataCardLabel = SKScene(fileNamed: "DataCard")!.childNode(withName: "skDataLabel") as? SKLabelNode {
-//            print("2")
-//            myDataCardLabel.text = "yes yes yes"
-//            print(myDataCardLabel.text!)
-//
-//            self.addChild(spriteKitScene)
-//        }
-//    }
+    // Firebase functions
+    
+    func uploadData() {
+        // Variables
+        let newRef = ref.child("Plants").childByAutoId()
+        let autoID = newRef.key
+        plantID = autoID!
+        let refAdd = ref.child("Plants").child(autoID!)
+        
+        // Send data to firebase
+        newRef.setValue(["plantName" : "Bananaplant", "location" : "vak C, rij 4, bak 34", "plantID" : autoID])
+        
+        refAdd.child("phDatas").childByAutoId().setValue(["PH": "10", "optimumPH": "11", "time": "17:32, 12-01-2019"])
+        refAdd.child("growthDatas").childByAutoId().setValue(["growth": "13cm", "normalGrowth" : "11cm", "time": "17:33, 12-01-2019"])
+        refAdd.child("yieldDatas").childByAutoId().setValue(["yield": "60%","expectedYield": "73%", "time": "17:35, 12-01-2019"])
+        refAdd.child("comments").childByAutoId().setValue(["comment": "good growth, but expected a higher yield", "time": "17:37, 12-01-2019"])
+        
+        check_1 = 1
+    }
+    
+    func updateData() {
+        let refAdd = ref.child("Plants").child(plantID)
+        refAdd.child("phDatas").childByAutoId().setValue(["PH": "8", "optimumPH": "11", "time": "12:13, 19-01-2019"])
+        refAdd.child("growthDatas").childByAutoId().setValue(["growth": "17cm", "normalGrowth" : "19cm", "time": "12:14, 19-01-2019"])
+        refAdd.child("yieldDatas").childByAutoId().setValue(["yield": "82%","expectedYield": "80%", "time": "12:16, 19-01-2019"])
+        refAdd.child("comments").childByAutoId().setValue(["comment": "Yield increased, but growth and PH dropped which is bad.", "time": "17:37, 19-01-2019"])
+    }
+    
+    func fetchDefault() {
+        let id = plantID
+        
+        print("1")
+        print(id)
+        refHandle = ref.child("Plants").child(id).observe(.value, with: { (snapshot) in
+            
+            if (snapshot.value as? [String:AnyObject]) != nil {
+                
+                let plant = Plant(snapshot: snapshot)
+                
+                self.plantX = plant
+            }
+        })
+        if check_2 == 1 {
+            updateCard()
+        }
+        
+        self.check_2 = 1
+    }
+    
+    func updateCard() {
+        dataText = plantX.name!
+    }
+    
+    func fetchPh() {
+//        let id = plantID
+        print("2", plantID)
+        
+        check_2 = 2
+        
+        if check_2 == 2 {
+            refHandle = ref.child("Plants").child(plantID).child("phDatas").observe(.value, with: { (snapshot) in
+                
+                if (snapshot.value as? [String:AnyObject]) != nil {
+                    var phs: [PH] = []
+                    
+                    for child in snapshot.children {
+                        
+                        let phId = PH(snapshot: child as! DataSnapshot)
+                        
+                        phs.append(phId)
+                        
+                    }
+                    self.phArray = phs
+                    print(self.phArray)
+                }
+            })
+        }
+    }
 }

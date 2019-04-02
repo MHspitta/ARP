@@ -113,9 +113,11 @@
                                     <constraint firstAttribute="height" constant="30" id="vWf-MA-5E7"/>
                                 </constraints>
                                 <state key="normal" title="Input data"/>
+                                <connections>
+                                    <action selector="inputData:" destination="BV1-FR-VrT" eventType="touchUpInside" id="CZn-0N-5eG"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="KBc-4P-oVN" secondAttribute="bottom" constant="36" id="73T-nL-VSr"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
