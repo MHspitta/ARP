@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 // Structs
 
@@ -48,9 +49,9 @@ struct PH: Codable {
     init(snapshot: DataSnapshot) {
         let snapshotValue = snapshot.value as! [String:AnyObject]
         
-        ph = (snapshotValue["PH"] as! String)
-        optimumPh = (snapshotValue["optiumumPH"] as! String)
-        time = (snapshotValue["time"] as! String)
+        ph = snapshotValue["PH"] as! String
+        optimumPh = snapshotValue["optimumPH"] as! String
+        time = snapshotValue["time"] as! String
     }
 }
 
@@ -94,15 +95,19 @@ struct Comment: Codable {
     }
 }
 
-struct Id: Codable {
-    var id: String!
-    
-    init(snapshot: DataSnapshot) {
-        let snapshotValue = snapshot.value as! [String:AnyObject]
-        
-        id = (snapshotValue["id"] as! String)
-    }
+struct GLobalId {
+    static var id = String()
 }
+
+//struct Id: Codable {
+//    var id: String!
+//
+//    init(snapshot: DataSnapshot) {
+//        let snapshotValue = snapshot.value as! [String:AnyObject]
+//
+//        id = (snapshotValue["id"] as! String)
+//    }
+//}
 
 struct Uid: Codable {
     var id: String!
@@ -113,3 +118,4 @@ struct Uid: Codable {
         id = (snapshotValue["uid"] as! String)
     }
 }
+
