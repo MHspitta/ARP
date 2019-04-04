@@ -12,10 +12,15 @@ import Firebase
 import FirebaseDatabase
 
 protocol OptionSelectionDelegate {
-    func fetchPh()
-    func fetchGrowth()
-    func fetchYield()
-    func fetchComments()
+//    func fetchPh()
+//    func fetchGrowth()
+//    func fetchYield()
+//    func fetchComments()
+    
+    func selectPh()
+    func selectGrowth()
+    func selectYield()
+    func selectComments()
 }
 
 // Extra class to input all settings 
@@ -62,10 +67,9 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
     
     // Show options view function
     func showOptions() {
-        print("Check2")
+        
         // If window shared window opened
         if let window = UIApplication.shared.keyWindow {
-            print("check3")
             
             // Change the background color of the UIView
             blackView.backgroundColor = UIColor(white: 0, alpha: 0.5)
@@ -137,15 +141,15 @@ class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let setting = settings[indexPath.item]
         handleDismiss()
-        
+    
         if setting.name == "PH" {
-            selectionDelegate.fetchPh()
+            selectionDelegate.selectPh()
         } else if setting.name == "Growth & Expected growth" {
-            selectionDelegate.fetchGrowth()
+            selectionDelegate.selectGrowth()
         } else if setting.name == "Yield & Expected yield" {
-            selectionDelegate.fetchYield()
+            selectionDelegate.selectYield()
         } else if setting.name == "Comments" {
-            selectionDelegate.fetchComments()
+            selectionDelegate.selectComments()
         }
 
     }

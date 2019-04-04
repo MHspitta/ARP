@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		108F84EFCD4D2815181C1515 /* Pods_ARP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4200843DD7F9DBD5F5D0CD /* Pods_ARP.framework */; };
+		603C22C12255EDFC00795FCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 603C22C02255EDFC00795FCD /* Assets.xcassets */; };
+		603C22C522562D5F00795FCD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603C22C422562D5F00795FCD /* ViewController.swift */; };
 		6085CF38224BC3C600B274FB /* DataCard.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6085CF37224BC3C600B274FB /* DataCard.sks */; };
 		609B54C5224281830027372A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B54C4224281830027372A /* AppDelegate.swift */; };
 		609B54C7224281830027372A /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 609B54C6224281830027372A /* art.scnassets */; };
-		609B54C9224281830027372A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B54C8224281830027372A /* ViewController.swift */; };
 		609B54CC224281830027372A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 609B54CA224281830027372A /* Main.storyboard */; };
 		609B54D1224281860027372A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 609B54CF224281860027372A /* LaunchScreen.storyboard */; };
 		609B54DC224281860027372A /* ARPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609B54DB224281860027372A /* ARPTests.swift */; };
@@ -19,7 +20,6 @@
 		60AABB5D225219FF000A7D0F /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AABB5C225219FF000A7D0F /* Structs.swift */; };
 		60CA3873224E2A3B00C68622 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA3872224E2A3B00C68622 /* SettingCell.swift */; };
 		60CA3875224E2B7000C68622 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CA3874224E2B7000C68622 /* BaseCell.swift */; };
-		60CA3877224E396F00C68622 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60CA3876224E396F00C68622 /* Assets.xcassets */; };
 		60E9225A224CD487008B1BFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60E92259224CD487008B1BFD /* GoogleService-Info.plist */; };
 		60E9225C224CD72F008B1BFD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E9225B224CD72F008B1BFD /* LoginViewController.swift */; };
 		60E9225E224CE12A008B1BFD /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E9225D224CE12A008B1BFD /* SettingsLauncher.swift */; };
@@ -50,11 +50,12 @@
 		3E7D1BB96478AA117735F322 /* Pods-ARP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARP.debug.xcconfig"; path = "Target Support Files/Pods-ARP/Pods-ARP.debug.xcconfig"; sourceTree = "<group>"; };
 		58AE512B21FA88231FB6B3C2 /* Pods-ARPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARPTests.debug.xcconfig"; path = "Target Support Files/Pods-ARPTests/Pods-ARPTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5EE4A66D43059E9AADA0E82C /* Pods-ARPUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARPUITests.debug.xcconfig"; path = "Target Support Files/Pods-ARPUITests/Pods-ARPUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		603C22C02255EDFC00795FCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		603C22C422562D5F00795FCD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../../../Downloads/ViewController.swift; sourceTree = "<group>"; };
 		6085CF37224BC3C600B274FB /* DataCard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DataCard.sks; sourceTree = "<group>"; };
 		609B54C1224281830027372A /* ARP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		609B54C4224281830027372A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		609B54C6224281830027372A /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		609B54C8224281830027372A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		609B54CB224281830027372A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		609B54D0224281860027372A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		609B54D7224281860027372A /* ARPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +67,6 @@
 		60AABB5C225219FF000A7D0F /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		60CA3872224E2A3B00C68622 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		60CA3874224E2B7000C68622 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
-		60CA3876224E396F00C68622 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		60E92259224CD487008B1BFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		60E9225B224CD72F008B1BFD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		60E9225D224CE12A008B1BFD /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
@@ -142,16 +142,16 @@
 				609B54C4224281830027372A /* AppDelegate.swift */,
 				609B54C6224281830027372A /* art.scnassets */,
 				60E9225B224CD72F008B1BFD /* LoginViewController.swift */,
-				609B54C8224281830027372A /* ViewController.swift */,
 				60E9225D224CE12A008B1BFD /* SettingsLauncher.swift */,
+				603C22C422562D5F00795FCD /* ViewController.swift */,
 				60CA3872224E2A3B00C68622 /* SettingCell.swift */,
 				60CA3874224E2B7000C68622 /* BaseCell.swift */,
 				60AABB5C225219FF000A7D0F /* Structs.swift */,
 				609B54CA224281830027372A /* Main.storyboard */,
-				60CA3876224E396F00C68622 /* Assets.xcassets */,
 				609B54CF224281860027372A /* LaunchScreen.storyboard */,
 				6085CF37224BC3C600B274FB /* DataCard.sks */,
 				60E92259224CD487008B1BFD /* GoogleService-Info.plist */,
+				603C22C02255EDFC00795FCD /* Assets.xcassets */,
 			);
 			path = ARP;
 			sourceTree = "<group>";
@@ -299,7 +299,7 @@
 				609B54C7224281830027372A /* art.scnassets in Resources */,
 				609B54D1224281860027372A /* LaunchScreen.storyboard in Resources */,
 				609B54CC224281830027372A /* Main.storyboard in Resources */,
-				60CA3877224E396F00C68622 /* Assets.xcassets in Resources */,
+				603C22C12255EDFC00795FCD /* Assets.xcassets in Resources */,
 				60E9225A224CD487008B1BFD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,7 +426,7 @@
 				60E9225C224CD72F008B1BFD /* LoginViewController.swift in Sources */,
 				60CA3873224E2A3B00C68622 /* SettingCell.swift in Sources */,
 				60AABB5D225219FF000A7D0F /* Structs.swift in Sources */,
-				609B54C9224281830027372A /* ViewController.swift in Sources */,
+				603C22C522562D5F00795FCD /* ViewController.swift in Sources */,
 				60CA3875224E2B7000C68622 /* BaseCell.swift in Sources */,
 				609B54C5224281830027372A /* AppDelegate.swift in Sources */,
 			);

@@ -7,24 +7,60 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // Function to login
+    @IBOutlet var emailText: UITextField!
+    @IBOutlet var passwordText: UITextField!
+    @IBOutlet var errorLabel: UILabel!
 
-        // Do any additional setup after loading the view.
+    @IBAction func login(_ sender: UIButton) {
+
+        // Check input
+        if emailText.text != "" && passwordText.text != "" {
+            
+            // Login
+            Auth.auth().signIn(withEmail: emailText.text! , password: passwordText.text!) { (user, error) in
+                
+                // Check if input is correct else error message
+                if user != nil {
+                    self.performSegue(withIdentifier: "loginSuccesSegue", sender: self)
+                } else {
+                    if let myError = error?.localizedDescription {
+                        self.errorLabel.text = myError
+                    } else {
+                        self.errorLabel.text = "ERROR, login failed!"
+                    }
+                }
+                
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: - Overrides
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+        errorLabel.text = ""
     }
-    */
+}
 
+// Extension to hide keyboard
+extension UIViewController {
+    
+    // Function to hide keyboard
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self
+            , action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

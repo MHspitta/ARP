@@ -21,9 +21,9 @@ struct User: Codable {
     init(snapshot: DataSnapshot) {
         let snapshotValue = snapshot.value as! [String:AnyObject]
         
-        name = snapshotValue["user_name"] as! String
-        password = snapshotValue["password"] as! String
-        uid = snapshotValue["uid"] as! String
+        name = (snapshotValue["user_name"] as! String)
+        password = (snapshotValue["password"] as! String)
+        uid = (snapshotValue["uid"] as! String)
     }
 }
 
@@ -49,9 +49,9 @@ struct PH: Codable {
     init(snapshot: DataSnapshot) {
         let snapshotValue = snapshot.value as! [String:AnyObject]
         
-        ph = snapshotValue["PH"] as! String
-        optimumPh = snapshotValue["optimumPH"] as! String
-        time = snapshotValue["time"] as! String
+        ph = (snapshotValue["PH"] as! String)
+        optimumPh = (snapshotValue["optimumPH"] as! String)
+        time = (snapshotValue["time"] as! String)
     }
 }
 
@@ -95,19 +95,10 @@ struct Comment: Codable {
     }
 }
 
+// Global varibale to store ID
 struct GLobalId {
     static var id = String()
 }
-
-//struct Id: Codable {
-//    var id: String!
-//
-//    init(snapshot: DataSnapshot) {
-//        let snapshotValue = snapshot.value as! [String:AnyObject]
-//
-//        id = (snapshotValue["id"] as! String)
-//    }
-//}
 
 struct Uid: Codable {
     var id: String!
