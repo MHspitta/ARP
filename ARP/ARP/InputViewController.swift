@@ -32,11 +32,11 @@ class InputViewController: UIViewController {
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "unwindToInputMenu", sender: self)
+        self.performSegue(withIdentifier: "unwindToMain", sender: self)
     }
     
     @IBAction func uploadButtonTapped(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "unwindToInputMenu", sender: self)
+        self.performSegue(withIdentifier: "unwindToMain", sender: self)
     }
     
 }
