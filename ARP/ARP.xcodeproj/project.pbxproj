@@ -10,7 +10,6 @@
 		108F84EFCD4D2815181C1515 /* Pods_ARP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4200843DD7F9DBD5F5D0CD /* Pods_ARP.framework */; };
 		603C22C12255EDFC00795FCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 603C22C02255EDFC00795FCD /* Assets.xcassets */; };
 		603C22C722562F8000795FCD /* MeasurementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603C22C622562F8000795FCD /* MeasurementViewController.swift */; };
-		603C22C9225630FA00795FCD /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603C22C8225630FA00795FCD /* Grid.swift */; };
 		603C22CD2256330800795FCD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603C22CC2256330800795FCD /* ViewController.swift */; };
 		603C22CF2256335E00795FCD /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603C22CE2256335E00795FCD /* InputViewController.swift */; };
 		6085CF38224BC3C600B274FB /* DataCard.sks in Resources */ = {isa = PBXBuildFile; fileRef = 6085CF37224BC3C600B274FB /* DataCard.sks */; };
@@ -26,6 +25,7 @@
 		60E9225A224CD487008B1BFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60E92259224CD487008B1BFD /* GoogleService-Info.plist */; };
 		60E9225C224CD72F008B1BFD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E9225B224CD72F008B1BFD /* LoginViewController.swift */; };
 		60E9225E224CE12A008B1BFD /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E9225D224CE12A008B1BFD /* SettingsLauncher.swift */; };
+		60EDEC27225B7CEA003EBDBF /* ProductInfo.sks in Resources */ = {isa = PBXBuildFile; fileRef = 60EDEC26225B7CEA003EBDBF /* ProductInfo.sks */; };
 		B13FBDACBA03987BC82E15F5 /* Pods_ARPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33A22045D27FB564FF9C9BE8 /* Pods_ARPTests.framework */; };
 		B97940E09B330D665A852437 /* Pods_ARPUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF06746AED4D1BD82C0363D0 /* Pods_ARPUITests.framework */; };
 /* End PBXBuildFile section */
@@ -55,7 +55,6 @@
 		5EE4A66D43059E9AADA0E82C /* Pods-ARPUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARPUITests.debug.xcconfig"; path = "Target Support Files/Pods-ARPUITests/Pods-ARPUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		603C22C02255EDFC00795FCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		603C22C622562F8000795FCD /* MeasurementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementViewController.swift; sourceTree = "<group>"; };
-		603C22C8225630FA00795FCD /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Grid.swift; path = ../../../../Downloads/Assets/Grid.swift; sourceTree = "<group>"; };
 		603C22CC2256330800795FCD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		603C22CE2256335E00795FCD /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		6085CF37224BC3C600B274FB /* DataCard.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DataCard.sks; sourceTree = "<group>"; };
@@ -76,6 +75,7 @@
 		60E92259224CD487008B1BFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		60E9225B224CD72F008B1BFD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		60E9225D224CE12A008B1BFD /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
+		60EDEC26225B7CEA003EBDBF /* ProductInfo.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ProductInfo.sks; sourceTree = "<group>"; };
 		70B080D41A81C236FB520A79 /* Pods-ARPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARPTests.release.xcconfig"; path = "Target Support Files/Pods-ARPTests/Pods-ARPTests.release.xcconfig"; sourceTree = "<group>"; };
 		8C55D8E99742009EA1CEE2BF /* Pods-ARP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARP.release.xcconfig"; path = "Target Support Files/Pods-ARP/Pods-ARP.release.xcconfig"; sourceTree = "<group>"; };
 		A05699BA254A8EA97044E737 /* Pods-ARPUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARPUITests.release.xcconfig"; path = "Target Support Files/Pods-ARPUITests/Pods-ARPUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,14 +153,14 @@
 				603C22CE2256335E00795FCD /* InputViewController.swift */,
 				603C22C622562F8000795FCD /* MeasurementViewController.swift */,
 				60E9225D224CE12A008B1BFD /* SettingsLauncher.swift */,
-				603C22C8225630FA00795FCD /* Grid.swift */,
 				60CA3872224E2A3B00C68622 /* SettingCell.swift */,
 				60CA3874224E2B7000C68622 /* BaseCell.swift */,
 				60AABB5C225219FF000A7D0F /* Structs.swift */,
+				603C22C02255EDFC00795FCD /* Assets.xcassets */,
 				609B54CF224281860027372A /* LaunchScreen.storyboard */,
 				6085CF37224BC3C600B274FB /* DataCard.sks */,
+				60EDEC26225B7CEA003EBDBF /* ProductInfo.sks */,
 				60E92259224CD487008B1BFD /* GoogleService-Info.plist */,
-				603C22C02255EDFC00795FCD /* Assets.xcassets */,
 			);
 			path = ARP;
 			sourceTree = "<group>";
@@ -304,6 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60EDEC27225B7CEA003EBDBF /* ProductInfo.sks in Resources */,
 				6085CF38224BC3C600B274FB /* DataCard.sks in Resources */,
 				609B54C7224281830027372A /* art.scnassets in Resources */,
 				609B54D1224281860027372A /* LaunchScreen.storyboard in Resources */,
@@ -440,7 +441,6 @@
 				60CA3875224E2B7000C68622 /* BaseCell.swift in Sources */,
 				609B54C5224281830027372A /* AppDelegate.swift in Sources */,
 				603C22C722562F8000795FCD /* MeasurementViewController.swift in Sources */,
-				603C22C9225630FA00795FCD /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
