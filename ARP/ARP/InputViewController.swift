@@ -12,9 +12,11 @@ import ARKit
 import Firebase
 import FirebaseDatabase
 
-class InputViewController: UIViewController {
+class InputViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
+UIImagePickerControllerDelegate {
 
-    @IBOutlet var inputPh: UITextField!
+
+    @IBOutlet var pickerView: UIPickerView!
     @IBOutlet var inputGrowth: UITextField!
     @IBOutlet var inputYield: UITextField!
     @IBOutlet var inputComment: UITextField!
@@ -24,10 +26,18 @@ class InputViewController: UIViewController {
     var refHandle: DatabaseHandle!
     let uid = Auth.auth().currentUser?.uid
     
+    // Variables
+    let phValues = ["1", "2", "3", "4", "5", "6", "7"
+        , "8", "9", "10", "11", "12", "13", "14"]
+    
+    var phValue: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         ref = Database.database().reference()
+        pickerView.dataSource = self
+        pickerView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,21 +58,34 @@ class InputViewController: UIViewController {
         uploadData()
     }
     
+    // Functions for pickerview
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int
+        , forComponent component: Int) -> String? {
+        return phValues[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return phValues.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int
+        , inComponent component: Int) {
+        phValue = phValues[row]
+    }
+
+    // Other functions
+    
+    // Function for time and date
     func timeAndDate() -> String {
         // Variables
-        let date = Date()
-        let calendar = Calendar.current
-        var components = calendar.dateComponents([Calendar.Component.day, Calendar.Component.month, Calendar.Component.year], from: date)
-        components.day = 25
-        components.month = 1
-        components.year = 2011
-        components.hour = 2
-        components.minute = 15
-        let currentDate = calendar.date(from: components)
-        
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
-        let stringDate = dateFormatter.string(from: currentDate!)
+        dateFormatter.dateFormat = "dd-MM-yyyy, HH:mm"
+        let stringDate = dateFormatter.string(from: Date())
+        
         return stringDate
 }
     
@@ -81,11 +104,11 @@ class InputViewController: UIViewController {
         
         let newRef = ref.child("Plants").child(GLobalId.id)
         
-        if inputPh.text != "" && inputGrowth.text != "" && inputYield.text != "" && inputComment.text != "" {
+        if inputGrowth.text != "" && inputYield.text != "" && inputComment.text != "" {
             
-            newRef.child("phDatas").childByAutoId().setValue(["PH" : inputPh.text!, "optimumPH" : "11", "time" : time])
-            newRef.child("growthDatas").childByAutoId().setValue(["growth" : inputGrowth.text!, "normalGrowth" : "12cm", "time" : time])
-            newRef.child("yieldDatas").childByAutoId().setValue(["expectedYield" : "\(inputYield.text!)%", "yield" : "65%", "time" : time])
+            newRef.child("phDatas").childByAutoId().setValue(["PH" : phValue, "optimumPH" : "11", "time" : time])
+            newRef.child("growthDatas").childByAutoId().setValue(["growth" : inputGrowth.text!, "normalGrowth" : "25cm", "time" : time])
+            newRef.child("yieldDatas").childByAutoId().setValue(["expectedYield" : "\(inputYield.text!)%", "yield" : "80%", "time" : time])
             newRef.child("comments").childByAutoId().setValue(["comment" : inputComment.text!, "time": time])
             
             createAlert(title: "Succeeded!", message: "All data is succesfully uploaded!")
@@ -96,7 +119,6 @@ class InputViewController: UIViewController {
     }
     
     func clearAll() {
-        inputPh.text = ""
         inputGrowth.text = ""
         inputYield.text = ""
         inputComment.text = ""
