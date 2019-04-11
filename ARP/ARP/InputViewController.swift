@@ -106,7 +106,7 @@ UIImagePickerControllerDelegate {
         
         if inputGrowth.text != "" && inputYield.text != "" && inputComment.text != "" {
             
-            newRef.child("phDatas").childByAutoId().setValue(["PH" : phValue, "optimumPH" : "11", "time" : time])
+            newRef.child("phDatas").childByAutoId().setValue(["PH" : phValue, "optimumPH" : "9", "time" : time])
             newRef.child("growthDatas").childByAutoId().setValue(["growth" : inputGrowth.text!, "normalGrowth" : "25cm", "time" : time])
             newRef.child("yieldDatas").childByAutoId().setValue(["expectedYield" : "\(inputYield.text!)%", "yield" : "80%", "time" : time])
             newRef.child("comments").childByAutoId().setValue(["comment" : inputComment.text!, "time": time])
