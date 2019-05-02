@@ -15,7 +15,7 @@ import FirebaseDatabase
 class InputViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
 UIImagePickerControllerDelegate {
 
-
+    // IB outlets
     @IBOutlet var pickerView: UIPickerView!
     @IBOutlet var inputGrowth: UITextField!
     @IBOutlet var inputYield: UITextField!
@@ -32,6 +32,7 @@ UIImagePickerControllerDelegate {
     
     var phValue: String!
     
+    // Function to override view did load
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
@@ -98,6 +99,7 @@ UIImagePickerControllerDelegate {
         }
     }
     
+    // Function to upload all data to Firebase
     func uploadData() {
         // Variables
         let time = timeAndDate()
@@ -118,13 +120,14 @@ UIImagePickerControllerDelegate {
         }
     }
     
+    // Function to clear all input fields
     func clearAll() {
         inputGrowth.text = ""
         inputYield.text = ""
         inputComment.text = ""
     }
     
-    // Function to alert user with popup
+    // Function to alert user with popup when fields are empty
     func createAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message
             , preferredStyle: UIAlertController.Style.alert)
